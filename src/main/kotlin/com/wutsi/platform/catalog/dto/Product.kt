@@ -20,5 +20,5 @@ public data class Product(
   public val currency: String = "",
   public val created: OffsetDateTime = OffsetDateTime.now(),
   public val updated: OffsetDateTime = OffsetDateTime.now(),
-  public val visible: Boolean? = null
+  public val visible: Boolean = false
 )

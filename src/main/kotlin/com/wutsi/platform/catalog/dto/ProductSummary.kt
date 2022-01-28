@@ -7,7 +7,7 @@ import kotlin.String
 
 public data class ProductSummary(
   public val id: Long = 0,
-  public val pictureUrl: String? = null,
+  public val thumbnail: PictureSummary? = null,
   public val title: String = "",
   public val price: Double? = null,
   public val comparablePrice: Double? = null,

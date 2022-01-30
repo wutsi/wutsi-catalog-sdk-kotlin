@@ -9,6 +9,7 @@ public data class ProductSummary(
   public val id: Long = 0,
   public val thumbnail: PictureSummary? = null,
   public val title: String = "",
+  public val summary: String? = null,
   public val price: Double? = null,
   public val comparablePrice: Double? = null,
   public val currency: String = "",

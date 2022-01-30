@@ -6,7 +6,7 @@ import kotlin.String
 
 public data class CreateProductRequest(
   public val title: String = "",
-  public val summary: String = "",
+  public val summary: String? = null,
   public val description: String? = null,
   public val categoryId: Long? = null,
   public val price: Double? = null,

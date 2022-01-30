@@ -9,7 +9,7 @@ import kotlin.collections.List
 
 public data class Product(
   public val id: Long = 0,
-  public val thumbnail: PictureSummary? = null,
+  public val thumbnail: PictureSummary = PictureSummary(),
   public val pictures: List<PictureSummary> = emptyList(),
   public val title: String = "",
   public val summary: String? = null,
@@ -18,7 +18,7 @@ public data class Product(
   public val price: Double? = null,
   public val comparablePrice: Double? = null,
   public val currency: String = "",
+  public val visible: Boolean = false,
   public val created: OffsetDateTime = OffsetDateTime.now(),
-  public val updated: OffsetDateTime = OffsetDateTime.now(),
-  public val visible: Boolean = false
+  public val updated: OffsetDateTime = OffsetDateTime.now()
 )

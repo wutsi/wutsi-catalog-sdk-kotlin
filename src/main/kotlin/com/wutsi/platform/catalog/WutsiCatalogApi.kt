@@ -53,7 +53,7 @@ public interface WutsiCatalogApi {
 
   @RequestLine("POST /v1/products/search")
   @Headers(value=["Content-Type: application/json"])
-  public fun searchProduct(request: SearchProductRequest): SearchProductResponse
+  public fun searchProducts(request: SearchProductRequest): SearchProductResponse
 
   @RequestLine("GET /v1/products/{id}")
   @Headers(value=["Content-Type: application/json"])

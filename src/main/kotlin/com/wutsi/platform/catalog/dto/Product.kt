@@ -12,6 +12,7 @@ public data class Product(
   public val accountId: Long = 0,
   public val thumbnail: PictureSummary? = null,
   public val pictures: List<PictureSummary> = emptyList(),
+  public val categories: List<CategorySummary> = emptyList(),
   public val title: String = "",
   public val summary: String? = null,
   public val description: String? = null,

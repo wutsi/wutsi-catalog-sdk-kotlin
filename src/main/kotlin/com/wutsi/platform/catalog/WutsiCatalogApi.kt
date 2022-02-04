@@ -13,7 +13,7 @@ import com.wutsi.platform.catalog.dto.SearchCategoryRequest
 import com.wutsi.platform.catalog.dto.SearchCategoryResponse
 import com.wutsi.platform.catalog.dto.SearchProductRequest
 import com.wutsi.platform.catalog.dto.SearchProductResponse
-import com.wutsi.platform.catalog.dto.UpdateCategoryRequest
+import com.wutsi.platform.catalog.dto.UpdateCategoryAttributeRequest
 import com.wutsi.platform.catalog.dto.UpdateProductAttributeRequest
 import feign.Headers
 import feign.Param
@@ -35,13 +35,17 @@ public interface WutsiCatalogApi {
   @Headers(value=["Content-Type: application/json"])
   public fun getCategory(@Param("id") id: Long): GetCategoryResponse
 
-  @RequestLine("POST /v1/categories/{id}")
-  @Headers(value=["Content-Type: application/json"])
-  public fun updateCategory(@Param("id") id: Long, request: UpdateCategoryRequest): Unit
-
   @RequestLine("DELETE /v1/categories/{id}")
   @Headers(value=["Content-Type: application/json"])
   public fun deleteCategory(@Param("id") id: Long): Unit
+
+  @RequestLine("POST /v1/categories/{id}/attributes/{name}")
+  @Headers(value=["Content-Type: application/json"])
+  public fun updateCategoryAttribute(
+    @Param("id") id: Long,
+    @Param("name") name: String,
+    request: UpdateCategoryAttributeRequest
+  ): Unit
 
   @RequestLine("POST /v1/products")
   @Headers(value=["Content-Type: application/json"])

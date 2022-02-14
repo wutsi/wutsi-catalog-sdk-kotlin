@@ -1,6 +1,7 @@
 package com.wutsi.platform.catalog.dto
 
 import kotlin.Double
+import kotlin.Long
 import kotlin.String
 
 public data class CreateProductRequest(
@@ -8,5 +9,7 @@ public data class CreateProductRequest(
   public val summary: String? = null,
   public val description: String? = null,
   public val price: Double? = null,
-  public val comparablePrice: Double? = null
+  public val comparablePrice: Double? = null,
+  public val categoryId: Long = 0,
+  public val subCategoryId: Long = 0
 )

@@ -3,6 +3,7 @@ package com.wutsi.platform.catalog.dto
 import java.time.OffsetDateTime
 import kotlin.Boolean
 import kotlin.Double
+import kotlin.Int
 import kotlin.Long
 import kotlin.String
 import kotlin.collections.List
@@ -21,6 +22,11 @@ public data class Product(
   public val comparablePrice: Double? = null,
   public val currency: String = "",
   public val visible: Boolean = false,
+  public val categoryId: Long = 0,
+  public val subCategoryId: Long = 0,
+  public val quantity: Int = 0,
+  public val maxOrder: Int? = null,
+  public val type: String = "",
   public val created: OffsetDateTime = OffsetDateTime.now(),
   public val updated: OffsetDateTime = OffsetDateTime.now()
 )

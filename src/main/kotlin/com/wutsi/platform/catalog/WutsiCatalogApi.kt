@@ -4,6 +4,8 @@ import com.wutsi.platform.catalog.dto.AddPictureRequest
 import com.wutsi.platform.catalog.dto.AddPictureResponse
 import com.wutsi.platform.catalog.dto.CreateProductRequest
 import com.wutsi.platform.catalog.dto.CreateProductResponse
+import com.wutsi.platform.catalog.dto.CreateReservationRequest
+import com.wutsi.platform.catalog.dto.CreateReservationResponse
 import com.wutsi.platform.catalog.dto.GetCategoryResponse
 import com.wutsi.platform.catalog.dto.GetProductResponse
 import com.wutsi.platform.catalog.dto.SearchCategoryRequest
@@ -58,4 +60,8 @@ public interface WutsiCatalogApi {
   @RequestLine("DELETE /v1/products/pictures/{id}")
   @Headers(value=["Content-Type: application/json"])
   public fun deletePicture(@Param("id") id: Long): Unit
+
+  @RequestLine("POST /v1/reservations")
+  @Headers(value=["Content-Type: application/json"])
+  public fun createReservation(request: CreateReservationRequest): CreateReservationResponse
 }

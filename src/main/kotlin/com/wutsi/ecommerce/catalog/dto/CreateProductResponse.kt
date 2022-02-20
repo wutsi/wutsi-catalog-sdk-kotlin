@@ -1,4 +1,4 @@
-package com.wutsi.platform.catalog.dto
+package com.wutsi.ecommerce.catalog.dto
 
 import kotlin.Long
 

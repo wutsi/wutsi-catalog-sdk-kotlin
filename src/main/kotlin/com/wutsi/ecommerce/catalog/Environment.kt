@@ -1,4 +1,4 @@
-package com.wutsi.platform.catalog
+package com.wutsi.ecommerce.catalog
 
 import kotlin.String
 

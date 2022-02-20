@@ -1,4 +1,4 @@
-package com.wutsi.platform.catalog.entity
+package com.wutsi.ecommerce.catalog.entity
 
 enum class ProductType {
     PHYSICAL,

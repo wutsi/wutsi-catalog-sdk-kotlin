@@ -1,4 +1,4 @@
-package com.wutsi.platform.catalog.dto
+package com.wutsi.ecommerce.catalog.dto
 
 public data class GetCategoryResponse(
   public val category: Category = Category()

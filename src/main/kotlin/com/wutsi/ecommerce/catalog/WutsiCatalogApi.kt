@@ -64,4 +64,8 @@ public interface WutsiCatalogApi {
   @RequestLine("POST /v1/reservations")
   @Headers(value=["Content-Type: application/json"])
   public fun createReservation(request: CreateReservationRequest): CreateReservationResponse
+
+  @RequestLine("POST /v1/reservations/{id}")
+  @Headers(value=["Content-Type: application/json"])
+  public fun cancelReservation(@Param("id") id: Long): Unit
 }

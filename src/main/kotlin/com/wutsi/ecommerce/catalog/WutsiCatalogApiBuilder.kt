@@ -10,7 +10,7 @@ import kotlin.collections.List
 
 public class WutsiCatalogApiBuilder {
   public fun build(
-    env: com.wutsi.ecommerce.catalog.Environment,
+    env: Environment,
     mapper: ObjectMapper,
     interceptors: List<RequestInterceptor> = emptyList(),
     errorDecoder: ErrorDecoder = ErrorDecoder.Default(),
@@ -24,7 +24,7 @@ public class WutsiCatalogApiBuilder {
     .client(feign.okhttp.OkHttpClient())
     .encoder(feign.jackson.JacksonEncoder(mapper))
     .decoder(feign.jackson.JacksonDecoder(mapper))
-    .logger(feign.slf4j.Slf4jLogger(com.wutsi.ecommerce.catalog.WutsiCatalogApi::class.java))
+    .logger(feign.slf4j.Slf4jLogger(WutsiCatalogApi::class.java))
     .logLevel(feign.Logger.Level.BASIC)
     .requestInterceptors(interceptors)
     .errorDecoder(errorDecoder)
@@ -32,5 +32,5 @@ public class WutsiCatalogApiBuilder {
       java.util.concurrent.TimeUnit.SECONDS.toMillis(retryMaxPeriodSeconds), retryMaxAttempts))
     .options(feign.Request.Options(connectTimeoutMillis, java.util.concurrent.TimeUnit.MILLISECONDS,
       readTimeoutMillis, java.util.concurrent.TimeUnit.MILLISECONDS, followRedirects))
-    .target(com.wutsi.ecommerce.catalog.WutsiCatalogApi::class.java, env.url)
+    .target(WutsiCatalogApi::class.java, env.url)
 }

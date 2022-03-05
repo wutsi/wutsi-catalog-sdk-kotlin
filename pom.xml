@@ -6,7 +6,7 @@
 
   <artifactId>wutsi-catalog-sdk-kotlin</artifactId>
   <groupId>com.wutsi.ecommerce.catalog</groupId>
-  <version>0.0.28</version>
+  <version>0.0.29-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>wutsi-catalog-sdk-kotlin</name>
@@ -54,7 +54,7 @@
 
   <scm>
     <developerConnection>scm:git:https://github.com/wutsi/wutsi-catalog-sdk-kotlin.git</developerConnection>
-    <tag>wutsi-catalog-sdk-kotlin-0.0.28</tag>
+    <tag>HEAD</tag>
   </scm>
   <distributionManagement>
     <repository>

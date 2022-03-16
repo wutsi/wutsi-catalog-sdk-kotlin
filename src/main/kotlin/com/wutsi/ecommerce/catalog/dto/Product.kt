@@ -28,5 +28,6 @@ public data class Product(
   public val maxOrder: Int? = null,
   public val type: String = "",
   public val created: OffsetDateTime = OffsetDateTime.now(),
-  public val updated: OffsetDateTime = OffsetDateTime.now()
+  public val updated: OffsetDateTime = OffsetDateTime.now(),
+  public val numericFileUrl: String? = null
 )

@@ -29,5 +29,6 @@ public data class Product(
   public val type: String = "",
   public val created: OffsetDateTime = OffsetDateTime.now(),
   public val updated: OffsetDateTime = OffsetDateTime.now(),
-  public val numericFileUrl: String? = null
+  public val numericFileUrl: String? = null,
+  public val sections: List<SectionSummary> = emptyList()
 )

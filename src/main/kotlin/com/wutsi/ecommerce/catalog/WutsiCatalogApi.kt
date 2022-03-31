@@ -6,13 +6,18 @@ import com.wutsi.ecommerce.catalog.dto.CreateProductRequest
 import com.wutsi.ecommerce.catalog.dto.CreateProductResponse
 import com.wutsi.ecommerce.catalog.dto.CreateReservationRequest
 import com.wutsi.ecommerce.catalog.dto.CreateReservationResponse
+import com.wutsi.ecommerce.catalog.dto.CreateSectionRequest
+import com.wutsi.ecommerce.catalog.dto.CreateSectionResponse
 import com.wutsi.ecommerce.catalog.dto.GetCategoryResponse
 import com.wutsi.ecommerce.catalog.dto.GetProductResponse
+import com.wutsi.ecommerce.catalog.dto.GetSectionResponse
+import com.wutsi.ecommerce.catalog.dto.ListSectionResponse
 import com.wutsi.ecommerce.catalog.dto.SearchCategoryRequest
 import com.wutsi.ecommerce.catalog.dto.SearchCategoryResponse
 import com.wutsi.ecommerce.catalog.dto.SearchProductRequest
 import com.wutsi.ecommerce.catalog.dto.SearchProductResponse
 import com.wutsi.ecommerce.catalog.dto.UpdateProductAttributeRequest
+import com.wutsi.ecommerce.catalog.dto.UpdateSectionRequest
 import feign.Headers
 import feign.Param
 import feign.RequestLine
@@ -28,6 +33,34 @@ public interface WutsiCatalogApi {
   @RequestLine("GET /v1/categories/{id}")
   @Headers(value=["Content-Type: application/json"])
   public fun getCategory(@Param("id") id: Long): GetCategoryResponse
+
+  @RequestLine("GET /v1/sections")
+  @Headers(value=["Content-Type: application/json"])
+  public fun listSections(): ListSectionResponse
+
+  @RequestLine("POST /v1/sections")
+  @Headers(value=["Content-Type: application/json"])
+  public fun createSection(request: CreateSectionRequest): CreateSectionResponse
+
+  @RequestLine("GET /v1/sections/{id}")
+  @Headers(value=["Content-Type: application/json"])
+  public fun getSection(@Param("id") id: Long): GetSectionResponse
+
+  @RequestLine("POST /v1/sections/{id}")
+  @Headers(value=["Content-Type: application/json"])
+  public fun updateSection(@Param("id") id: Long, request: UpdateSectionRequest): Unit
+
+  @RequestLine("DELETE /v1/sections/{id}")
+  @Headers(value=["Content-Type: application/json"])
+  public fun deleteSection(@Param("id") id: Long): Unit
+
+  @RequestLine("POST /v1/sections/{id}/products/{product-id}")
+  @Headers(value=["Content-Type: application/json"])
+  public fun addToSection(@Param("id") id: Long, @Param("product-id") productId: Long): Unit
+
+  @RequestLine("DELETE /v1/sections/{id}/products/{product-id}")
+  @Headers(value=["Content-Type: application/json"])
+  public fun removeFromSection(@Param("id") id: Long, @Param("product-id") productId: Long): Unit
 
   @RequestLine("POST /v1/products")
   @Headers(value=["Content-Type: application/json"])

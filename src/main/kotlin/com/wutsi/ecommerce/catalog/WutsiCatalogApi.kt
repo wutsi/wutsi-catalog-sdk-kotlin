@@ -78,6 +78,14 @@ public interface WutsiCatalogApi {
   @Headers(value=["Content-Type: application/json"])
   public fun deleteProduct(@Param("id") id: Long): Unit
 
+  @RequestLine("POST /v1/products/{id}/publish")
+  @Headers(value=["Content-Type: application/json"])
+  public fun publishProduct(@Param("id") id: Long): Unit
+
+  @RequestLine("DELETE /v1/products/{id}/publish")
+  @Headers(value=["Content-Type: application/json"])
+  public fun unpublishProduct(@Param("id") id: Long): Unit
+
   @RequestLine("POST /v1/products/{id}/attributes/{name}")
   @Headers(value=["Content-Type: application/json"])
   public fun updateProductAttribute(

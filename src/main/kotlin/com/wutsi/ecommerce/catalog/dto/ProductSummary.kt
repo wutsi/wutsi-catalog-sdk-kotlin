@@ -21,5 +21,7 @@ public data class ProductSummary(
   public val type: String = "",
   public val currency: String = "",
   public val created: OffsetDateTime = OffsetDateTime.now(),
-  public val updated: OffsetDateTime = OffsetDateTime.now()
+  public val updated: OffsetDateTime = OffsetDateTime.now(),
+  public val published: OffsetDateTime = OffsetDateTime.now(),
+  public val status: String = ""
 )

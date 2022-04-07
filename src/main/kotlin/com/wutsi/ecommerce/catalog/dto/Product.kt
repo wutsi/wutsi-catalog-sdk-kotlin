@@ -30,5 +30,7 @@ public data class Product(
   public val created: OffsetDateTime = OffsetDateTime.now(),
   public val updated: OffsetDateTime = OffsetDateTime.now(),
   public val numericFileUrl: String? = null,
-  public val sections: List<SectionSummary> = emptyList()
+  public val sections: List<SectionSummary> = emptyList(),
+  public val status: String = "",
+  public val published: OffsetDateTime = OffsetDateTime.now()
 )

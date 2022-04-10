@@ -34,9 +34,9 @@ public interface WutsiCatalogApi {
   @Headers(value=["Content-Type: application/json"])
   public fun getCategory(@Param("id") id: Long): GetCategoryResponse
 
-  @RequestLine("GET /v1/sections")
+  @RequestLine("GET /v1/sections?account-id={account-id}")
   @Headers(value=["Content-Type: application/json"])
-  public fun listSections(): ListSectionResponse
+  public fun listSections(@Param("account-id") accountId: Long): ListSectionResponse
 
   @RequestLine("POST /v1/sections")
   @Headers(value=["Content-Type: application/json"])

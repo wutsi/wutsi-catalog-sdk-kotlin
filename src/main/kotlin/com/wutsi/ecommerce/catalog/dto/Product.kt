@@ -11,7 +11,7 @@ import kotlin.collections.List
 public data class Product(
   public val id: Long = 0,
   public val accountId: Long = 0,
-  public val thumbnail: PictureSummary = PictureSummary(),
+  public val thumbnail: PictureSummary? = null,
   public val pictures: List<PictureSummary> = emptyList(),
   public val category: CategorySummary = CategorySummary(),
   public val subCategory: CategorySummary = CategorySummary(),
@@ -32,5 +32,6 @@ public data class Product(
   public val numericFileUrl: String? = null,
   public val sections: List<SectionSummary> = emptyList(),
   public val status: String = "",
-  public val published: OffsetDateTime? = null
+  public val published: OffsetDateTime? = null,
+  public val overallMetrics: Metrics = Metrics()
 )

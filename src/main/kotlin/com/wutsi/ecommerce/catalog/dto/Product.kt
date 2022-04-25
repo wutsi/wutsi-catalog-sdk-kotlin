@@ -22,8 +22,6 @@ public data class Product(
   public val comparablePrice: Double? = null,
   public val currency: String = "",
   public val visible: Boolean = false,
-  public val categoryId: Long = 0,
-  public val subCategoryId: Long = 0,
   public val quantity: Int = 0,
   public val maxOrder: Int? = null,
   public val type: String = "",

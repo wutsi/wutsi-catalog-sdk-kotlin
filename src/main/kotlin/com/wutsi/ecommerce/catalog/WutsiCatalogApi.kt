@@ -9,11 +9,14 @@ import com.wutsi.ecommerce.catalog.dto.CreateReservationResponse
 import com.wutsi.ecommerce.catalog.dto.CreateSectionRequest
 import com.wutsi.ecommerce.catalog.dto.CreateSectionResponse
 import com.wutsi.ecommerce.catalog.dto.GetCategoryResponse
+import com.wutsi.ecommerce.catalog.dto.GetMerchantResponse
 import com.wutsi.ecommerce.catalog.dto.GetProductResponse
 import com.wutsi.ecommerce.catalog.dto.GetSectionResponse
 import com.wutsi.ecommerce.catalog.dto.ListSectionResponse
 import com.wutsi.ecommerce.catalog.dto.SearchCategoryRequest
 import com.wutsi.ecommerce.catalog.dto.SearchCategoryResponse
+import com.wutsi.ecommerce.catalog.dto.SearchMerchantRequest
+import com.wutsi.ecommerce.catalog.dto.SearchMerchantResponse
 import com.wutsi.ecommerce.catalog.dto.SearchProductRequest
 import com.wutsi.ecommerce.catalog.dto.SearchProductResponse
 import com.wutsi.ecommerce.catalog.dto.UpdateProductAttributeRequest
@@ -109,4 +112,12 @@ public interface WutsiCatalogApi {
   @RequestLine("DELETE /v1/reservations/{id}")
   @Headers(value=["Content-Type: application/json"])
   public fun cancelReservation(@Param("id") id: Long): Unit
+
+  @RequestLine("POST /v1/merchants/search")
+  @Headers(value=["Content-Type: application/json"])
+  public fun searchMerchants(request: SearchMerchantRequest): SearchMerchantResponse
+
+  @RequestLine("GET /v1/merchants/{id}")
+  @Headers(value=["Content-Type: application/json"])
+  public fun getMerchant(@Param("id") id: Long): GetMerchantResponse
 }

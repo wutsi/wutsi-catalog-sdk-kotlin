@@ -24,6 +24,7 @@ import com.wutsi.ecommerce.catalog.dto.UpdateSectionRequest
 import feign.Headers
 import feign.Param
 import feign.RequestLine
+import kotlin.Boolean
 import kotlin.Long
 import kotlin.String
 import kotlin.Unit
@@ -37,9 +38,10 @@ public interface WutsiCatalogApi {
   @Headers(value=["Content-Type: application/json"])
   public fun getCategory(@Param("id") id: Long): GetCategoryResponse
 
-  @RequestLine("GET /v1/sections?account-id={account-id}")
+  @RequestLine("GET /v1/sections?account-id={account-id}&with-published-products={with-published-products}")
   @Headers(value=["Content-Type: application/json"])
-  public fun listSections(@Param("account-id") accountId: Long): ListSectionResponse
+  public fun listSections(@Param("account-id") accountId: Long, @Param("with-published-products")
+      withPublishedProducts: Boolean? = null): ListSectionResponse
 
   @RequestLine("POST /v1/sections")
   @Headers(value=["Content-Type: application/json"])
